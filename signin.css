@@ -1,0 +1,37 @@
+.font-style {
+  font-family: "Roboto", sans-serif;
+}
+.container-h {
+  height: 850px !important;
+}
+.img-w {
+  width: 100px;
+  height: 600px !important;
+}
+.img-h {
+  height: 600px !important;
+}
+.form-fs {
+  font-size: 14px;
+}
+.container-rounded-img {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.container-rounded-form {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+@media screen and (max-width: 640px) {
+  .logo {
+    margin-top: 20px;
+  }
+  .container-h {
+    height: 550px !important;
+  }
+  .mb-disply-border {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 350px;
+  }
+}
