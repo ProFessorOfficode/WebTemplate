@@ -28,29 +28,29 @@
                 <div
                     class="col-7 container-rounded-form border-start border-top border-end border-bottom d-flex justify-content-center align-items-center mb-disply-border">
                     <div class="row">
-                        <div class="text-center mb-5 ">
+                        <div class="text-center ">
                             <img src="images/logo.svg" class="img-fluid logo" alt="..." width="300">
                         </div>
                         <form class="p-5">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label form-fs">Email
                                     address<span class="text-danger">*</span></label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Enter your email">
+                                <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp"
+                                    placeholder="Enter your email">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label form-fs">Password<span
                                         class="text-danger">*</span></label>
-                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                <input type="password" class="form-control" id="user-password"
                                     placeholder="Enter your password">
                             </div>
                             <div class="pb-3">
                                 <a href="" class="text-decoration-none text-primary">Forget password</a>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                            <button type="submit" class="btn btn-primary w-100" id="user-login">Login</button>
                             <div class="text-center pt-4">
                                 No account yet?
-                                <a href="" class="text-decoration-none text-primary">&nbspRegister</a>
+                                <a href="Register.html" class="text-decoration-none text-primary">&nbspRegister</a>
                             </div>
                         </form>
                     </div>
@@ -68,6 +68,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+
+    <script type="module" src="js/login.js" defer></script>
 </body>
 
 </html>

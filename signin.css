@@ -4,6 +4,9 @@
 .container-h {
   height: 850px !important;
 }
+.register-logo {
+  padding: 0px 65px 0px;
+}
 .img-w {
   width: 100px;
   height: 600px !important;
