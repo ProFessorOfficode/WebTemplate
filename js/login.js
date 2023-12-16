@@ -10,7 +10,7 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
 
-const auth = getAuth();
+const auth = getAuth(app);
 
 document.getElementById("user-login").addEventListener("click", (e) => {
   e.preventDefault();
