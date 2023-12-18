@@ -60,27 +60,40 @@ document.getElementById("nav_create").addEventListener("click", (e) => {
 // Create user
 document.getElementById("create_user").addEventListener("click", async (e) => {
   e.preventDefault();
-  document.getElementById("loadingCreation").style.display = "block";
-  document.getElementById("loadingCreation").innerHTML = loadingTemplate();
-  document.getElementById("create").style.visibility = "hidden";
-  const docRef = await setDoc(
-    dbref,
-    {
-      name: document.getElementById("user_name").value,
-      age: document.getElementById("user_age").value,
-      email: document.getElementById("user_email").value,
-      password: document.getElementById("user_password").value,
-    },
-    { merge: true }
-  );
-  setTimeout(async function () {
-    document.getElementById("create").style.visibility = "visible";
-    document.getElementById("loadingCreation").style.display = "none";
-    document.getElementById("user_name").value = "";
-    document.getElementById("user_age").value = "";
-    document.getElementById("user_email").value = "";
-    document.getElementById("user_password").value = "";
-  }, 1500);
+  let user_name = document.getElementById("user_name");
+  let user_age = document.getElementById("user_age");
+  let user_email = document.getElementById("user_email");
+  let user_password = document.getElementById("user_password");
+  if (
+    user_name.value &&
+    user_age.value &&
+    user_email.value &&
+    user_password.value !== ""
+  ) {
+    document.getElementById("loadingCreation").style.display = "block";
+    document.getElementById("loadingCreation").innerHTML = loadingTemplate();
+    document.getElementById("create").style.visibility = "hidden";
+    const docRef = await setDoc(
+      dbref,
+      {
+        name: user_name.value,
+        age: user_age.value,
+        email: user_email.value,
+        password: user_password.value,
+      },
+      { merge: true }
+    );
+    setTimeout(async function () {
+      document.getElementById("create").style.visibility = "visible";
+      document.getElementById("loadingCreation").style.display = "none";
+      user_name.value = "";
+      user_age.value = "";
+      user_email.value = "";
+      user_password.value = "";
+    }, 1500);
+  } else {
+    alert("Please fill all fields");
+  }
 });
 
 // Nav View users
