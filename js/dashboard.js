@@ -7,10 +7,16 @@ import {
   setDoc,
   collection,
   getDocs,
+  deleteDoc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const app = initializeApp(firebaseConfig);
+import {
+  getAuth,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const db = getFirestore(app);
 const dbref = doc(collection(db, "codeCrafter"));
 
@@ -32,7 +38,13 @@ function adminNavContainer() {
                   <a class="nav-link active" aria-current="page" href="#" id="nav_user">Users</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link active" href="#" id="account">Account</a>
+              <div class="dropdown-center">
+              <a class="nav-link active " href="#" id="account" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+              <ul class="dropdown-menu p-0 m-0 dropdown-menu-end px-3 py-2">
+                <li><a class="dropdown-item p-0" href="#">Profile</a></li>
+                <li><a class="dropdown-item p-0" href="#" id="sign_out">Sign out</a></li>
+              </ul>
+            </div>
               </li>
           </ul>
       </div>
@@ -48,6 +60,18 @@ function loadingTemplate() {
 </div> 
 </div> `;
 }
+
+// Sign out
+document.getElementById("sign_out").addEventListener("click", (e) => {
+  e.preventDefault();
+  signOut(auth)
+    .then(() => {
+      window.location.href = "index.html";
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+});
 // Nav Create user
 document.getElementById("nav_create").addEventListener("click", (e) => {
   e.preventDefault();
@@ -90,6 +114,7 @@ document.getElementById("create_user").addEventListener("click", async (e) => {
       user_age.value = "";
       user_email.value = "";
       user_password.value = "";
+      location.reload();
     }, 1500);
   } else {
     alert("Please fill all fields");
@@ -124,8 +149,8 @@ document.getElementById("nav_user").addEventListener("click", async (e) => {
       const GetStudentTemplate = `<div class="card-body">
     <h5 class="card-title">${doc.data().name}</h5>
     <p class="card-text">${doc.data().age}</p>
-    <a href="#" class="btn btn-primary">Delete</a>
-    <a href="#" class="btn btn-primary">Update</a>
+    <a href="#" class="btn btn-primary" id="delete_user">Delete</a>
+    <a href="#" class="btn btn-primary">Edit</a>
 </div>`;
       studentCard.innerHTML = GetStudentTemplate;
       studentsContainer.appendChild(studentCard);

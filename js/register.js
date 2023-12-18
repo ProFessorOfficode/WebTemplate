@@ -19,13 +19,14 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 const db = getFirestore(app);
+const dbref = doc(collection(db, "codeCrafter"));
 
 document
   .getElementById("user-register")
   .addEventListener("click", async (e) => {
     e.preventDefault();
     try {
-      const docRef = await setDoc(doc(db, "codeCrafter", "users"), {
+      const docRef = await setDoc(dbref, {
         name: document.getElementById("user-name").value,
         age: document.getElementById("user-name").value,
         email: document.getElementById("user-email").value,
@@ -49,7 +50,7 @@ document
             .catch((error) => {
               // An error happened.
             });
-          window.location.href = "login.html";
+          window.location.href = "index.html";
           // ...
         })
         .catch((error) => {
