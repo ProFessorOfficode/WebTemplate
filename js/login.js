@@ -23,7 +23,7 @@ document.getElementById("user-login").addEventListener("click", (e) => {
     .then(() => {
       // Signed in
       alert("Login successful");
-      // ...
+      window.location.href = "/Dashboard.html";
     })
     .catch((error) => {
       alert(error.message);
