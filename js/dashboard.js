@@ -40,6 +40,14 @@ function adminNavContainer() {
 </nav>`;
 }
 adminNavContainer();
+
+function loadingTemplate() {
+  return ` <div class="d-flex justify-content-center container-h align-items-center">
+  <div class="spinner-border" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div> 
+</div> `;
+}
 // Nav Create user
 document.getElementById("nav_create").addEventListener("click", (e) => {
   e.preventDefault();
@@ -49,18 +57,11 @@ document.getElementById("nav_create").addEventListener("click", (e) => {
   document.getElementById("view_user").innerHTML = "";
   document.getElementById("create").style.display = "block";
 });
-
 // Create user
 document.getElementById("create_user").addEventListener("click", async (e) => {
   e.preventDefault();
   document.getElementById("loadingCreation").style.display = "block";
-  document.getElementById(
-    "loadingCreation"
-  ).innerHTML = ` <div class="d-flex justify-content-center container-h align-items-center">
-    <div class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div> 
-  </div> `;
+  document.getElementById("loadingCreation").innerHTML = loadingTemplate();
   document.getElementById("create").style.visibility = "hidden";
   const docRef = await setDoc(
     dbref,
@@ -87,13 +88,7 @@ document.getElementById("nav_user").addEventListener("click", async (e) => {
   e.preventDefault();
   document.getElementById("loading").style.display = "block";
   document.getElementById("create").style.display = "none";
-  document.getElementById(
-    "loading"
-  ).innerHTML = ` <div class="d-flex justify-content-center container-h align-items-center">
-    <div class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div> 
-  </div> `;
+  document.getElementById("loading").innerHTML = loadingTemplate();
   document.getElementById("view_user").style.visibility = "hidden";
   document.getElementById("view_user").innerHTML = `  
   <div class="d-flex justify-content-center">
