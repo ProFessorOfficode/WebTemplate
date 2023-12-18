@@ -19,31 +19,11 @@
 <body class="bg-white container-h font-style">
     <!-- Navigation -->
     <div id="nav">
-        <nav class="navbar navbar-expand-lg bg-light shadow-sm">
-            <div class="container-fluid">
-                <a class="navbar-brand fw-bold" href="#">CodeCraft</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end fw-bold" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#" id="nav_create">Create</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#" id="nav_user">Users</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#" id="account">Account</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+
     </div>
     <!-- Create User -->
-    <div id="create" style="display: block;">
+    <span id="loadingCreation"></span>
+    <div id="create">
         <div class="border d-flex justify-content-center align-items-center container-h">
             <form class="border w-50 p-5 m-5 rounded-3 bg-light">
                 <div class="text-center">
@@ -70,81 +50,8 @@
         </div>
     </div>
     <!-- Read user -->
-    <div style="display: none;" id="view_user">
-        <div class="d-flex justify-content-center">
-            <div class="container m-0 p-0">
-                <div class="row pt-5 m-0">
-                    <h4>View users</h4>
-                    <div class="border-bottom mb-3"></div>
-                    <div id="get_user"></div>
-                    <!-- <div class="card m-1" style="width: 17rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample User</h5>
-                            <p class="card-text">Age</p>
-                            <a href="#" class="btn btn-primary">Delete</a>
-                            <a href="#" class="btn btn-primary">Update</a>
-                        </div>
-                    </div>
-                    <div class="card m-1" style="width: 17rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample User</h5>
-                            <p class="card-text">Age</p>
-                            <a href="#" class="btn btn-primary">Delete</a>
-                            <a href="#" class="btn btn-primary">Update</a>
-                        </div>
-                    </div>
-                    <div class="card m-1" style="width: 17rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample User</h5>
-                            <p class="card-text">Age</p>
-                            <a href="#" class="btn btn-primary">Delete</a>
-                            <a href="#" class="btn btn-primary">Update</a>
-                        </div>
-                    </div>
-                    <div class="card m-1" style="width: 17rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample User</h5>
-                            <p class="card-text">Age</p>
-                            <a href="#" class="btn btn-primary">Delete</a>
-                            <a href="#" class="btn btn-primary">Update</a>
-                        </div>
-                    </div>
-
-                    <div class="card m-1" style="width: 17rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample User</h5>
-                            <p class="card-text">Age</p>
-                            <a href="#" class="btn btn-primary">Delete</a>
-                            <a href="#" class="btn btn-primary">Update</a>
-                        </div>
-                    </div>
-                    <div class="card m-1" style="width: 17rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample User</h5>
-                            <p class="card-text">Age</p>
-                            <a href="#" class="btn btn-primary">Delete</a>
-                            <a href="#" class="btn btn-primary">Update</a>
-                        </div>
-                    </div>
-                    <div class="card m-1" style="width: 17rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample User</h5>
-                            <p class="card-text">Age</p>
-                            <a href="#" class="btn btn-primary">Delete</a>
-                            <a href="#" class="btn btn-primary">Update</a>
-                        </div>
-                    </div>
-                    <div class="card m-1" style="width: 17rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample User</h5>
-                            <p class="card-text">Age</p>
-                            <a href="#" class="btn btn-primary">Delete</a>
-                            <a href="#" class="btn btn-primary">Update</a>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-        </div>
+    <span id="loading"></span>
+    <div id="view_user">
     </div>
 
     <!-- Bootstrap js -->

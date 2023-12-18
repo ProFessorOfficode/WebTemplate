@@ -13,7 +13,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <title>Register</title>
+    <title>Login</title>
 </head>
 
 <body class="bg-white container-h font-style">
@@ -28,38 +28,29 @@
                 <div
                     class="col-7 container-rounded-form border-start border-top border-end border-bottom d-flex justify-content-center align-items-center mb-disply-border">
                     <div class="row">
-                        <div class="text-center mb-4 register-logo">
-                            <img src="images/logo.svg" class="img-fluid logo" alt="..." width="200">
+                        <div class="text-center ">
+                            <img src="images/logo.svg" class="img-fluid logo" alt="..." width="300">
                         </div>
-                        <form class="px-5">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label form-fs">Name<span
-                                        class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp"
-                                    placeholder="Enter your name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label form-fs">Age<span
-                                        class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="user-age" placeholder="Enter your age"
-                                    required>
-                            </div>
+                        <form class="p-5">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label form-fs">Email
                                     address<span class="text-danger">*</span></label>
                                 <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp"
-                                    placeholder="Enter your email" required>
+                                    placeholder="Enter your email">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label form-fs">Password<span
                                         class="text-danger">*</span></label>
                                 <input type="password" class="form-control" id="user-password"
-                                    placeholder="Enter your password" required>
+                                    placeholder="Enter your password">
                             </div>
-                            <button type="submit" class="btn btn-primary w-100" id="user-register">Register</button>
+                            <div class="pb-3">
+                                <a href="" class="text-decoration-none text-primary">Forget password</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100" id="user-login">Login</button>
                             <div class="text-center pt-4">
-                                Have an account?
-                                <a href="index.html" class="text-decoration-none text-primary">&nbspLogin</a>
+                                No account yet?
+                                <a href="Register.html" class="text-decoration-none text-primary">&nbspRegister</a>
                             </div>
                         </form>
                     </div>
@@ -78,7 +69,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 
-    <script type="module" src="js/register.js" defer></script>
+    <script type="module" src="js/login.js" defer></script>
 </body>
 
 </html>
